@@ -22,7 +22,7 @@
     <section class="header-content">
         <a href="#early-access" id="gea-btn" class="action-btn gea-btn" style="margin-top: 14px;">Get Early Access</a>
         <div class="logo" style="text-align: center"><a href="/" class="header-link"><img src="assets/images/logo.png" alt="Logo" style="margin-top: 15px; max-height: 30px"></a></div>
-        <a href="" class="action-btn pres-btn" style="margin-top: 14px;">View Presentation</a>
+        <a target="_blank" href="https://speakerdeck.com/dombox/dombox-the-zero-spam-mail-service" class="action-btn pres-btn" style="margin-top: 14px;">View Presentation</a>
     </section>
     </section>
 <section class="banner">
@@ -103,7 +103,7 @@
     <div class="section">
         <h2 id="solution-summary">Solution Summary</h2>
 
-        <p><u>Heads Up!</u> Our solution may not make complete sense unless you <a target="_blank" href="">view our presentation</a>. So don't judge this project by only reading this summary. Consider this summary as a half-baked version.</p>
+        <p><u>Heads Up!</u> Our solution may not make complete sense unless you <a target="_blank" href="https://speakerdeck.com/dombox/dombox-the-zero-spam-mail-service">view our presentation</a>. So don't judge this project by only reading this summary. Consider this summary as a half-baked version.</p>
 
         <p>We have two kind of mailboxes. (A) Normal Mailboxes (B) Isolated Mailboxes</p>
         <p>We solve the email spam problem in three phases. Isolation, Restriction and Injection</p>
@@ -264,7 +264,7 @@
         <p>Spam Filter is applicable only for Primary (P), Mailbox (M) and Dombox (D) box types</p>
         <p>Anomalies Filter is applicable only for Hybrid (H) and Combox (C) box types</p>
 
-        <p>To get a more in-depth understanding of the project, its fundamentals and the details involved, please <a target="_blank" href="">view our presentation</a>. You can also use the button at the top of the page.</p>
+        <p>To get a more in-depth understanding of the project, its fundamentals and the details involved, please <a target="_blank" href="https://speakerdeck.com/dombox/dombox-the-zero-spam-mail-service">view our presentation</a>. You can also use the button at the top of the page.</p>
     </div>
 
     <div class="section">
@@ -293,7 +293,7 @@
 
         <p>Via Combox, Website owners get "Stable Users", on the other hand Consumers get "Spam-free" Isolated Mailbox. So it's a win-win on both sides</p>
 
-        <p><u>Heads Up!</u> Since we are going to disrupt the current Internet, If you are a website owner, be sure to <a target="_blank" href="">read our presentation</a>, especially the "Combox" section. Or you are gonna lose your customers in the future. {If you know someone who owns a website, please share our website link with them}</p>
+        <p><u>Heads Up!</u> Since we are going to disrupt the current Internet, If you are a website owner, be sure to <a target="_blank" href="https://speakerdeck.com/dombox/dombox-the-zero-spam-mail-service">read our presentation</a>, especially the "Combox" section. Or you are gonna lose your customers in the future. {If you know someone who owns a website, please share our website link with them}</p>
 
     </div>
 
@@ -314,7 +314,7 @@
         <h2 id="benefits">Benefits</h2>
 
         <p>Our Internet may seems like it solves only the email spam problem. But in reality, you need a separate page to list out all the benefits.</p>
-        <p><a target="_blank" href="">This section</a> lists all the benefits you can get via our Parallel Internet</p>
+        <p><a target="_blank" href="https://speakerdeck.com/dombox/dombox-the-zero-spam-mail-service?slide=332">This section</a> lists all the benefits you can get via our Parallel Internet</p>
 
     </div>
 
@@ -464,18 +464,18 @@
                         $("#loading").show();
 
                         // Validate the form. All fields are mandatory.
-                        // if ($.trim($('#email').val()) === '') {
-                        //     $("#loading").hide();
-                        //     $(formMessages).removeClass().addClass('alert alert-danger');
-                        //     $(formMessages).text('Email cannot be empty');
-                        //     return;
-                        // }
-                        // if ($.trim($('#g-recaptcha-response').val()) === '') {
-                        //     $("#loading").hide();
-                        //     $(formMessages).removeClass().addClass('alert alert-danger');
-                        //     $(formMessages).text('You seem to be a bot!');
-                        //     return;
-                        // }
+                        if ($.trim($('#email').val()) === '') {
+                            $("#loading").hide();
+                            $(formMessages).removeClass().addClass('alert alert-danger');
+                            $(formMessages).text('Email cannot be empty');
+                            return;
+                        }
+                        if ($.trim($('#g-recaptcha-response').val()) === '') {
+                            $("#loading").hide();
+                            $(formMessages).removeClass().addClass('alert alert-danger');
+                            $(formMessages).text('You seem to be a bot!');
+                            return;
+                        }
 
                         // Serialize the form data.
                         let formData = $(form).serialize();

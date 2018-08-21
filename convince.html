@@ -22,7 +22,7 @@
     <section class="header-content">
         <a href="#early-access" id="gea-btn" class="action-btn gea-btn" style="margin-top: 14px;">Get Early Access</a>
         <div class="logo" style="text-align: center"><a href="/" class="header-link"><img src="assets/images/logo.png" alt="Logo" style="margin-top: 15px; max-height: 30px"></a></div>
-        <a href="" class="action-btn pres-btn" style="margin-top: 14px;">View Presentation</a>
+        <a href="https://speakerdeck.com/dombox/dombox-the-zero-spam-mail-service" class="action-btn pres-btn" style="margin-top: 14px;">View Presentation</a>
     </section>
     </section>
 <section class="banner">
@@ -265,18 +265,18 @@
                         $("#loading").show();
 
                         // Validate the form. All fields are mandatory.
-                        // if ($.trim($('#email').val()) === '') {
-                        //     $("#loading").hide();
-                        //     $(formMessages).removeClass().addClass('alert alert-danger');
-                        //     $(formMessages).text('Email cannot be empty');
-                        //     return;
-                        // }
-                        // if ($.trim($('#g-recaptcha-response').val()) === '') {
-                        //     $("#loading").hide();
-                        //     $(formMessages).removeClass().addClass('alert alert-danger');
-                        //     $(formMessages).text('You seem to be a bot!');
-                        //     return;
-                        // }
+                        if ($.trim($('#email').val()) === '') {
+                            $("#loading").hide();
+                            $(formMessages).removeClass().addClass('alert alert-danger');
+                            $(formMessages).text('Email cannot be empty');
+                            return;
+                        }
+                        if ($.trim($('#g-recaptcha-response').val()) === '') {
+                            $("#loading").hide();
+                            $(formMessages).removeClass().addClass('alert alert-danger');
+                            $(formMessages).text('You seem to be a bot!');
+                            return;
+                        }
 
                         // Serialize the form data.
                         let formData = $(form).serialize();
