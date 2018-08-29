@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>We are Dombox. The zero spam mail service - Data</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src='//www.google.com/recaptcha/api.js'></script>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.1';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<section class="page-header" id="page-header">
+    <section class="header-content">
+        <a href="ea.html" id="" class="action-btn gea-btn" style="margin-top: 14px;">Get Early Access</a>
+        <div class="logo" style="text-align: center"><a href="/" class="header-link"><img src="assets/images/logo.png" alt="Logo" style="margin-top: 15px; max-height: 30px"></a></div>
+        <a target="_blank" href="https://speakerdeck.com/dombox/dombox-the-zero-spam-mail-service" class="action-btn pres-btn" style="margin-top: 14px;">View Presentation</a>
+    </section>
+</section>
+<section class="banner">
+    <section class="main-content">
+        <div class="banner-container" style="text-align: center; letter-spacing: 1px;">
+            <div class="banner-text big-banner" style="font-size: 2.7rem; text-transform: capitalize;">We are Dombox. The zero spam mail service.</div>
+            <div class="banner-text" style="font-size: 1.38rem;">We are building a system to fix <span style="text-decoration: underline">Email Spam</span> and <span style="text-decoration: underline">Internet Privacy</span> issues</div>
+        </div>
+    </section>
+</section>
+<ul class="title-block">
+    <li><a href="contracts.html" class="previous">&laquo; Part 3</a></li>
+    <li><h1>Part 4: The Data</h1></li>
+    <li><a href="blockade.html" class="next">Part 5 &raquo;</a></li>
+</ul>
+<section class="main-content main-info" style="padding-top: 0">
+    <div class="section">
+        <h2 id="">Data Classifications</h2>
+        <p>User Data is classified into three categories. (1) Green Data (2) Yellow Data (3) Red Data</p>
+    </div>
+
+    <div class="section">
+        <h2 id="" style="margin-bottom: 20px">Data Sensitivity</h2>
+
+        <table class="table table-bordered">
+            <tbody>
+            <tr>
+                <td>Green Data</td>
+                <td>Low</td>
+            </tr>
+            <tr>
+                <td>Yellow Data</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Red Data</td>
+                <td>High</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="section">
+        <h2 id="" style="margin-bottom: 20px">Data Access</h2>
+
+        <table class="table table-bordered">
+            <tbody>
+            <tr>
+                <td>Consumers</td>
+                <td>Fills their personal data by editing their profile</td>
+            </tr>
+            <tr>
+                <td>Businesses</td>
+                <td>Request Consumer Data via Portal</td>
+            </tr>
+            <tr>
+                <td>Consumers</td>
+                <td>Give permission to business to access their data via “Teleport”</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="section">
+        <h2 id="">Green data</h2>
+        <p>If a third party website get hacked, the damage is nearly null in this category. This is because, all data found in this category are Insensitive ones (including email address).</p>
+        <p>e.g. Back in 2013, 150 million Adobe accounts were hacked. If Adobe had only our green data, they can contact our consumers without any issues, on the other hand, this data is useless in spammers hands. </p>
+        <p>Because hacking this data is nothing more than crawling Facebook profiles. Note: Everyday websites are getting hacked and user data getting stolen. So this is a major breakthrough.</p>
+        <p>For most websites, only Green Data is enough. If you are website owner, keep in mind you are discouraging user signups if you request “Yellow Data” and “Green Data” without a sensible reason.</p>
+        <p>“Green Data” contains the following fields. </p>
+        <p>First Name, Last Name, Display Name, Preferred Usernames, Domkey, Email, Gender, Avatar, Age Group, Date Joined, Time Zone, Locale, Date Format, Website</p>
+    </div>
+
+    <div class="section">
+        <h2 id="">Yellow Data</h2>
+        <p>If a third party website that contain the yellow data get hacked, then the damage is minimal.</p>
+        <p>“Yellow Data” contains the following fields. </p>
+        <p>Date of Birth, Country, Social Links.</p>
+        <p>Keep in mind, the consumer has the option to decline Yellow Data and Red Data requests.</p>
+        <p>Yellow Data and Red Data requires a valid reason for each field.</p>
+        <p>For instance, Yellow Data contains "Date Of Birth" field. If some website need to access that data, then a valid reason is required from them. e.g. "Adult website. For age verification" is a valid reason. But "To send birthday wishes" is not.</p>
+    </div>
+
+    <div class="section">
+        <h2 id="">Red Data</h2>
+        <p>Red Data contains highly sensitive fields. Phone Number, Billing Address, Shipping Address</p>
+        <p>These data will be helpful when signing up for e-commerce websites</p>
+        <p>Again.. the consumer has the option to decline the Red Data request.</p>
+        <p>And Red Data requires a valid reason for each field.</p>
+        <p>A portal that request access for at least one “Red Data” field is called "Red Portal"</p>
+        <p>A portal that request access for at least one “Yellow Data” data but not “Red Data” fields is called "Yellow Portal"</p>
+        <p>A portal that request access for only “Green Data” fields is called "Green Portal". By default all portals have full access to this data.</p>
+    </div>
+
+
+
+    <div class="section">
+        <h2 id="">Benefits</h2>
+        <p>Teleport button is designed to attract “Minimal Attention” from the user.</p>
+
+        <table class="table table-bordered">
+            <tbody>
+            <tr>
+                <td>Green Data</td>
+                <td>Looks Good</td>
+            </tr>
+            <tr>
+                <td>Yellow Data</td>
+                <td>Pay Attention</td>
+            </tr>
+            <tr>
+                <td>Red Data</td>
+                <td>Pay Strict Attention</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>(A) Spamless - "Teleport" button helps you to reduce spam mails </p>
+        <p>(B) Better Privacy - Since "Green Data" is useless in the third party hands, it offer better privacy</p>
+        <p>(C) Transparency - You can clearly see what data you gave access to the website from your Combox page. </p>
+        <p>(D) Simplicity - The purpose of Teleport button is Signup and Login. Nothing more. No other data access other than the fields you see in the traditional signup, login and edit profile forms.</p>
+        <p>Because 99% of the time, when people click the “Signup with Google” or “Signup with Facebook” kind of button, they are there to SIGNUP. Not to give access to their entire data.</p>
+        <p>Note that we are not a social networking website and we have no plans to become one. So there is no need for a website to put message like “We don't share anything without your permission”. So our "Teleport" button is "less scary"</p>
+
+    </div>
+
+
+    <div class="section last-section">
+        <h2 id="solution"></h2>
+        <ul class="title-block">
+            <li><a href="contracts.html" class="previous">&laquo; Part 3: The Contracts</a></li>
+            <li><h1>Part 4: The Data</h1></li>
+            <li><a href="blockade.html" class="next">Part 5: The Blockade &raquo;</a></li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b757342c7f8b574"></script>
+</section>
+<div style="text-align: center; margin-bottom: 20px; font-size: 12px">&copy; 2018 Dombox, Inc. All rights reserved.</div>
+​<script type="text/javascript">
+    var addthis_config = addthis_config||{};
+    addthis_config.data_track_addressbar = false;
+    addthis_config.data_track_clickback = false;
+</script>
+</body>
+
+</html>

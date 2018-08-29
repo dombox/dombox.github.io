@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>We are Dombox. The zero spam mail service - Blockade</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src='//www.google.com/recaptcha/api.js'></script>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.1';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<section class="page-header" id="page-header">
+    <section class="header-content">
+        <a href="ea.html" id="" class="action-btn gea-btn" style="margin-top: 14px;">Get Early Access</a>
+        <div class="logo" style="text-align: center"><a href="/" class="header-link"><img src="assets/images/logo.png" alt="Logo" style="margin-top: 15px; max-height: 30px"></a></div>
+        <a target="_blank" href="https://speakerdeck.com/dombox/dombox-the-zero-spam-mail-service" class="action-btn pres-btn" style="margin-top: 14px;">View Presentation</a>
+    </section>
+</section>
+<section class="banner">
+    <section class="main-content">
+        <div class="banner-container" style="text-align: center; letter-spacing: 1px;">
+            <div class="banner-text big-banner" style="font-size: 2.7rem; text-transform: capitalize;">We are Dombox. The zero spam mail service.</div>
+            <div class="banner-text" style="font-size: 1.38rem;">We are building a system to fix <span style="text-decoration: underline">Email Spam</span> and <span style="text-decoration: underline">Internet Privacy</span> issues</div>
+        </div>
+    </section>
+</section>
+
+<ul class="title-block">
+    <li><a href="data.html" class="previous">&laquo; Part 4</a></li>
+    <li><h1>Part 5: The Blockade</h1></li>
+</ul>
+<section class="main-content main-info" style="padding-top: 0">
+
+
+    <div class="section">
+        <h2 id="">The Problem</h2>
+        <p>"Domboxes" definitely gonna protect you from spammers because each dombox can receive mails only from the "Dombox Domain" and its "Alias Domains".</p>
+        <p>But what about "Mailboxes"? They can receive mails from anyone right?</p>
+        <p>For instance, what happens when your Primary (P) mail address somehow end up in a spammer's hand? There are ways a spammer can acquire your primary email address.</p>
+        <p>e.g. These days every app ask you to invite your friends. We have friends who sell us out by giving full access to their "Google Contacts" and "Facebook Contacts" for some extra life in games. Most likely you have such friends too.</p>
+        <p>So a hacker can hack those app servers and get your contact from there. A hacker may also post the data dump in public forums.</p>
+        <p>The trick is not in preventing spammers from getting your primary email address. Its in making your primary email address useless in spammer hands. i.e. Spam should be prevented at the source, not the destination.</p>
+    </div>
+
+    <div class="section">
+        <h2 id="">Restriction Phase</h2>
+        <p>Note: We spent our time in the last 4 parts, just to have this “Restriction” phase.</p>
+        <p>We are gonna restrict our "Mailboxes". Its like hanging a sign “Restricted Area. Do not Enter. Authorized Personnel Only” </p>
+        <p>So.. Who are these "Authorized Personnel"?</p>
+        <p>Well.. That's the Whitelisted and Neutral contacts found in your "Contacts" section </p>
+        <p>Restriction Phase actually contains two modes</p>
+        <p>(A) Restricted Mode (B) Greylisted Mode</p>
+    </div>
+
+    <div class="section">
+        <h2 id="">Restricted Mode</h2>
+        <p>This mode applicable only for the boxes found in "Mailboxes" group</p>
+        <p>But you can use this mode only when you have "Domboxes" extension enabled.</p>
+        <p>So this option is for “Mailboxes”, but you need “Domboxes” to use this feature.</p>
+        <p>Restriction is a sub process of Isolation. In other words without Isolation you cannot have Restriction.</p>
+        <p>The idea is that, you are actually offloading the Promotional Mails and Transactional Mails to Domboxes. So only Conversational mails are whats left in Mailboxes.</p>
+        <p>You can find most of your "Conversation Mails" contacts in your "Contacts" section. So when you enable "Restricted Mode", you are asking us to allow mails only from the contacts found in your "Contacts" section</p>
+        <p>We will be checking whether the "Message From" contact found in your "Contacts" section</p>
+        <p>Restricted Mode is an optional feature. By default it’s turned off. You need to enable it to use that feature</p>
+        <p>You can turn on/turn off this mode anytime.</p>
+        <p>When it’s turned off, it allows mails from everyone. But not from the "Blacklisted" contacts</p>
+        <p>When it’s turned on, it allows mails only from the "Whitelisted" and "Neutral" contacts. All others will be immediately rejected</p>
+        <p>If you send a mail to a new contact, it will be automatically whitelisted.</p>
+        <p>If you ever deactivate the Domboxes extension, then the restricted mode will be deactivated too.</p>
+    </div>
+
+    <div class="section">
+        <h2 id="">Restricted Mode Principle</h2>
+        <p>When "Restricted Mode" is OFF, the system works in the following principle => “All Mails Must Be Accepted Unless Proven Guilty”</p>
+        <p>When "Restricted Mode" is ON, the system works in the following principle => “All Mails Must Be Rejected Until Proven Innocent”</p>
+    </div>
+
+    <div class="section">
+        <h2 id="">Greylisted Mode</h2>
+        <p>This mode applicable only for the boxes found in "Domboxes" group</p>
+        <p>This mode applicable only for certain boxes in "Domboxes" group.</p>
+        <p>Same "Restricted Mode" rules apply with few exceptions</p>
+        <p>Domboxes are Domain-based isolated mailboxes and it usually verifies whether the sender domain is authorized to send mails for the “Dombox Domain”.</p>
+        <p>Since we are verifying only the domain and not its users, there is a possibility where spammer use free mail services like gmail.com to send out spam.</p>
+        <p>For example, you create a Dombox for gmail.com and give it to your friend John Doe who has email address john@gmail.com. Jane Smith is a spammer who also have a free gmail account jane@gmail.com. Jane Smith can now send spam to your gmail.com Dombox.</p>
+        <p>Just like “Restricted” mode, all incoming mails are restricted to contacts in “Greylisted” mode too. Only the people found in the contacts are allowed to send mails to the consumer.</p>
+        <p>However for “Greylisted” mode only the Dombox Domain’s contacts (i.e. @gmail.com in this case) are allowed whereas in “Restricted” mode all contacts are allowed.</p>
+        <p>“Greylisted” mode applicable only for the popular mail services where anyone can signup and send mails.</p>
+        <p>Since all free email services in the world, not gonna depend on 3rd party mail services to send out emails, we need to check the “Envelope From” email address in the contacts, instead of “Message From”</p>
+        <p>"Greylisted" mode automatically enabled when the consumer create a “Dombox” for free mail service domains like @gmail.com, @yahoo.com, @outlook.com, @domboxmail.com etc.</p>
+        <p>Again… Restricted mode checks for "Message From" email address in contacts, whereas Greylisted Mode checks for "Envelope From" email address in contacts</p>
+    </div>
+
+    <div class="section">
+        <h2 id="">Injection Phase</h2>
+        <p>Finally, Let’s talk about “Injection” part.</p>
+        <p>Although we made our system bullet proof from spammers via "Isolation" and "Restriction", we also made our system bullet proof from genuine senders. Let's call them "Genuine Strangers". </p>
+        <p>You need to manually ask the receiver to whitelist your contact. Sometimes that would be a daunting process. e.g. A college student asking the professor to whitelist his/her contact. </p>
+        <p>So we need to improve the system.</p>
+        <p>This phase contains two options.</p>
+        <p>(1) Phone number validation</p>
+        <p>(2) Attention Fee</p>
+    </div>
+
+    <div class="section">
+        <h2 id="">Phone Number Validation</h2>
+        <p>In this method, the sender/stranger need to enter your phone number correctly. </p>
+        <p>A spammer may have your email address but not your phone number</p>
+        <p>These "Genuine Strangers" could also be the people you once met and gave your business card. So there is a higher chance these “Genuine Strangers” have access to your phone number too.</p>
+        <p>Pros:</p>
+        <p>Quick and Simple.</p>
+        <p>Cons:</p>
+        <p>If you are a celebrity even a minor one, this option won’t play nicely. </p>
+        <p>Note: If you receive spam via this method, that means spammer have your phone number as well. In such cases disable this option. </p>
+    </div>
+
+    <div class="section">
+        <h2 id="">Attention Fee</h2>
+        <p>When it comes to Internet, its all about getting your attention.</p>
+        <p>The way we see it, if you receive 1000 emails in a year, 900 (90%) of them will be Transactional and Promotional Mails. </p>
+        <p>100 (10%) of them will be Conversational mails</p>
+        <p>If we dissect those 100 Conversational Mails, 90 of them would be from known people and 10 of them of would be from unknown people (Note: We are assuming you are an average internet user here. )</p>
+        <p>90 (90%) of them would be from known people (We fixed this with Restricted Mode)</p>
+        <p>10 (10%) of them would be from Unknown people (This is where we need Attention Fee)</p>
+        <p>The “Attention Fee” will be set by the “Receiver”. The money can be from 1 cent to $1000. Default will be 1 cent. If you are not a busy person like Bill Gates, you should go with a low value. </p>
+        <p>If you set a very high value, then even genuine people can't able to contact you. You are trying to fight spammers here. Not scare genuine people.</p>
+        <p>The “Attention Fee” will be charged from the sender, before sending the mail. If the mail is marked as “Genuine” by the receiver, then the money will be returned back to the sender and the contact will be whitelisted.   </p>
+        <p>Our “Attention Fee” model is similar to the system Bill Gates and his team designed back in 2004 to fight spammers. It didn’t work for them at that time. But it will definitely work in ours.</p>
+        <p>This is because Mr. Gates applied “Payment Model” for all mails including Transactional and Promotional mails. In our system “Payment Model” is applicable only for Conversational Mails and that too only for “Strangers”. </p>
+        <p>Payment mode was their “Primary” line of defence. In our case its “Tertiary” i.e. Isolation => Restriction => Injection.  Note: Injection is a sub phase of Restriction. And Restriction is a sub phase of Isolation. In other words, You can’t have “Injection” without “Isolation and Restriction”.  </p>
+        <p>And all three phases are optional. Meaning you can only use the Normal Mailboxes just like Gmail. i.e. The traditional way </p>
+    </div>
+
+    <div class="section">
+        <h2 id="">Attention Fee Calculation</h2>
+        <p>The default value is 1 cent. But the default value is not an optimal value if you are a busy person</p>
+        <p>For example, If you are Bill Gates or Jeff Bezos then 1 cent is definitely not an Optimal value</p>
+        <p>So, here are the steps to calculate your attention fee</p>
+        <p>Step 1: Take your annual salary (e.g. Dave is a Software Engineer in San Francisco who makes $200,000 USD annually)</p>
+        <p>Step 2: Divide your salary by 2000. That's your hourly pay. In Dave's case its $100</p>
+        <p>Step 3: Multiple your hourly rate by 100 to get the value in cents. In Dave's case its 10,000</p>
+        <p>Step 4: Divide that “Cents” value by 3600. That's how much you make per second. In Dave's case its 10000 / 3600 = 2.77</p>
+        <p>Step 5: So Dave's 1 second is worth 3 cents.</p>
+        <p>Step 6: You are going to spend at least 5 seconds in opening, reading and deleting the spam mail. So multiply by 5. In Dave's case its 15 cents</p>
+        <p>That should be the minimum suggested value you should charge for attention fee</p>
+        <p>Of course you are welcome to multiply that value by any number or you can just leave it to the default value “1 cent”. Its upto you.</p>
+    </div>
+
+    <div class="section">
+        <h2 id="">Injection Phase Notes</h2>
+        <p>Its really hard to validate phone number or ask for attention fee if the sender is a non domboxmail user.</p>
+        <p>This is because, Email can be easily forged. If a mail we receive says "president@whitehouse.gov", that's not always gonna be true. If we keep sending mails to "president@whitehouse.gov" to prove the identify, then we have far more serious problem.</p>
+        <p>The system would play nicely if the sender is a Domboxmail user</p>
+        <p>But if the sender is a Non Domboxmail user, the sender will get an error message like this. </p>
+        <p>“550 Unauthorized sender. Use this link to inject the message. https://dbx.ly/abcdefg”</p>
+    </div>
+
+    <div class="section last-section">
+        <h2 id="solution"></h2>
+        <ul class="title-block">
+            <li><a href="data.html" class="previous">&laquo; Part 4: The Data</a></li>
+            <li><h1>Part 5: The Blockade</h1></li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b757342c7f8b574"></script>
+</section>
+<div style="text-align: center; margin-bottom: 20px; font-size: 12px">&copy; 2018 Dombox, Inc. All rights reserved.</div>
+​<script type="text/javascript">
+    var addthis_config = addthis_config||{};
+    addthis_config.data_track_addressbar = false;
+    addthis_config.data_track_clickback = false;
+</script>
+</body>
+
+</html>

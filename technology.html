@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>We are Dombox. The zero spam mail service - Technology</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src='//www.google.com/recaptcha/api.js'></script>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.1';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<section class="page-header" id="page-header">
+    <section class="header-content">
+        <a href="ea.html" id="" class="action-btn gea-btn" style="margin-top: 14px;">Get Early Access</a>
+        <div class="logo" style="text-align: center"><a href="/" class="header-link"><img src="assets/images/logo.png" alt="Logo" style="margin-top: 15px; max-height: 30px"></a></div>
+        <a target="_blank" href="https://speakerdeck.com/dombox/dombox-the-zero-spam-mail-service" class="action-btn pres-btn" style="margin-top: 14px;">View Presentation</a>
+    </section>
+    </section>
+<section class="banner">
+    <section class="main-content">
+        <div class="banner-container" style="text-align: center; letter-spacing: 1px;">
+            <div class="banner-text big-banner" style="font-size: 2.7rem; text-transform: capitalize;">We are Dombox. The zero spam mail service.</div>
+            <div class="banner-text" style="font-size: 1.38rem;">We are building a system to fix <span style="text-decoration: underline">Email Spam</span> and <span style="text-decoration: underline">Internet Privacy</span> issues</div>
+        </div>
+    </section>
+</section>
+
+<ul class="title-block">
+    <li><a href="system.html" class="previous">&laquo; Part 1</a></li>
+    <li><h1>Part 2: The Technology</h1></li>
+    <li><a href="contracts.html" class="next">Part 3 &raquo;</a></li>
+</ul>
+<section class="main-content main-info" style="padding-top: 0">
+
+    <div class="section">
+        <h2 id="">Areas</h2>
+        <p>We are trying to innovate in three different areas</p>
+
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <td>Area</td>
+                <td>Branded As</td>
+                <td>Description</td>
+                <td>Box Type</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Email</td>
+                <td>Dombox</td>
+                <td>Domain-based Isolated Mailbox</td>
+                <td>Dombox (D)</td>
+            </tr>
+            <tr>
+                <td>Auth</td>
+                <td>Teleport</td>
+                <td>Contract-based Authentication Service</td>
+                <td>Combox (C)</td>
+            </tr>
+            <tr>
+                <td>Newsletter</td>
+                <td>Telescribe</td>
+                <td>One-Click Newsletter Subscription Service</td>
+                <td>Hybrid (H)</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>An "Isolated Mailbox" can be created by one of the following methods. </p>
+        <p>(1) Add "New Dombox" button (2) Teleport button (3) Telescribe button </p>
+        <p>Let us explain how we prevent spam in the "Isolated Mailboxes"</p>
+        <p>First let's have a look at this simple mail conversation.</p>
+    </div>
+
+    <div class="section">
+        <h2 id="smtp-chat" style="margin-bottom: 20px">Mail Conversation</h2>
+        <div class="well nomb" style="text-align: center">
+            <ul class="smtp-chat main-chat">
+                <li>mail.amazon.com Connecting to mail.domboxmail.com with its IP address</li>
+                <li class="smtp-chat-b">Dombox : 220 mail.domboxmail.com Dombox SMTP Service Ready</li>
+                <li>Amazon : HELO mail.amazon.com</li>
+                <li class="smtp-chat-b">Dombox : 250 Hello, nice to meet you, mail.amazon.com</li>
+                <li>Amazon : MAIL FROM: &lt;jeff@amazon.com&gt;</li>
+                <li class="smtp-chat-b">Dombox : 250 OK</li>
+                <li>Amazon : RCPT TO: &lt;test123$amazon.co.uk@domboxmail.com&gt;</li>
+                <li class="smtp-chat-b">Dombox : 250 OK</li>
+                <li>Amazon : DATA</li>
+                <li class="smtp-chat-b">Dombox : 354 End data with &lt;CRLF&gt;.&lt;CRLF&gt;</li>
+                <li class="smtp-chat-m">Amazon : From: Jeff Bezos &lt;jeff@amazon.com&gt;</li>
+                <li class="smtp-chat-m">Amazon : To: Test User &lt;test123$amazon.co.uk@domboxmail.com&gt;</li>
+                <li class="smtp-chat-m">Amazon : Date: Fri, 01 January 2015 16:02:43 -0500</li>
+                <li class="smtp-chat-m">Amazon : DKIM-Signature: a=rsa-sha1; q=dns; s=selector123; d=amazon.ca; ……….</li>
+                <li class="smtp-chat-m">Amazon : Subject: Merry Christmas</li>
+                <li class="smtp-chat-m">Amazon : Merry Christmas and a Happy New Year.</li>
+                <li class="smtp-chat-m">Amazon : Regards,</li>
+                <li class="smtp-chat-m">Amazon : Jeff Bezos</li>
+                <li class="smtp-chat-m">Amazon : .</li>
+                <li class="smtp-chat-b">Dombox : 250 OK, message accepted for delivery: queued as 12345</li>
+                <li>Amazon : QUIT</li>
+                <li class="smtp-chat-b">Dombox : 221 Bye</li>
+            </ul>
+        </div>
+        <div class="well well-desc">
+            <ul class="smtp-chat">
+                <li>"Envelope Part" represented in "Normal Font". This part is intended for mail handling servers.</li>
+                <li>"Message Part" represented in "Italics Font". This is the part that get displayed to the user.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 id="smtp-chat" style="margin-bottom: 20px">Detailed Description</h2>
+        <div class="well nomb" style="text-align: center">
+            <ul class="smtp-chat">
+                <li>mail.amazon.com Connecting to mail.domboxmail.com with its IP address</li>
+            </ul>
+        </div>
+        <div class="well well-desc">
+            <ul class="smtp-chat">
+                <li>At this stage we got the sending server IP address. Let's call this IP address 100.100.100.100</li>
+                <li>Let's save that IP address in this variable. SENDING_SERVER_IP_ADDRESS</li>
+                <li>SENDING_SERVER_IP_ADDRESS = 100.100.100.100</li>
+            </ul>
+        </div>
+
+        <div class="well nomb" style="text-align: center">
+            <ul class="smtp-chat">
+                <li class="smtp-chat-b">Dombox : 220 mail.domboxmail.com Dombox SMTP Service Ready</li>
+            </ul>
+        </div>
+        <div class="well well-desc">
+            <ul class="smtp-chat">
+                <li>This part says, our mail server is ready to listen to the Conversation</li>
+            </ul>
+        </div>
+
+        <div class="well nomb" style="text-align: center">
+            <ul class="smtp-chat">
+                <li>Amazon : HELO mail.amazon.com</li>
+            </ul>
+        </div>
+        <div class="well well-desc">
+            <ul class="smtp-chat">
+                <li>Amazon server, introduces itself saying "Hello, My name is Amazon"</li>
+            </ul>
+        </div>
+
+        <div class="well nomb" style="text-align: center">
+            <ul class="smtp-chat">
+                <li class="smtp-chat-b">Dombox : 250 Hello, nice to meet you, mail.amazon.com</li>
+            </ul>
+        </div>
+        <div class="well well-desc">
+            <ul class="smtp-chat">
+                <li>Our server responds politely</li>
+            </ul>
+        </div>
+
+        <div class="well nomb" style="text-align: center">
+            <ul class="smtp-chat">
+                <li>Amazon : MAIL FROM: &lt;jeff@amazon.com&gt;</li>
+            </ul>
+        </div>
+        <div class="well well-desc">
+            <ul class="smtp-chat">
+                <li>This part is known as "Envelope From"</li>
+                <li>The sending server claims that the mail is coming from jeff@<span style="color: deeppink">amazon.com</span></li>
+                <li>Hold On! We need to make sure that claim is true</li>
+                <li>So we are gonna ask our first question to the "Envelope Domain". Here <span style="color: deeppink">amazon.com</span> is the "Envelope Domain"</li>
+            </ul>
+        </div>
+
+        <div class="sub-content">
+            <div class="well nomb" style="text-align: center">
+                <ul class="smtp-chat">
+                    <li style="border-bottom: 1px solid #cccccc; margin-bottom: 10px; padding-bottom: 10px">Question 1: Hello "Envelope Domain i.e. <span style="color: deeppink">amazon.com</span>", we have a sender who claims the mail is from your domain. Could you give us your "Authorized IP Addresses" for your outgoing mails?</li>
+                    <li>Answer : Sure. Here is our "Authorized IP Addresses" => "100.100.100.100, 150.150.150.150, 200.200.200.200"</li>
+                </ul>
+            </div>
+            <div class="well well-desc">
+                <ul class="smtp-chat">
+                    <li>If the SENDING_SERVER_IP_ADDRESS found in the "Authorized IP Addresses", then the result is "Pass"  </li>
+                    <li>If the SENDING_SERVER_IP_ADDRESS not found in the "Authorized IP Addresses", then the result is "Fail"  </li>
+                    <li>If amazon.com returns empty response, then SENDING_SERVER_IP_ADDRESS is neither Authorized nor Unauthorized. So the result is "Neutral"    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="well nomb" style="text-align: center">
+            <ul class="smtp-chat">
+                <li class="smtp-chat-b">Dombox : 250 OK</li>
+            </ul>
+        </div>
+        <div class="well well-desc">
+            <ul class="smtp-chat">
+                <li>Our server acknowledges the "MAIL FROM" command issued by the sender</li>
+            </ul>
+        </div>
+
+        <div class="well nomb" style="text-align: center">
+            <ul class="smtp-chat">
+                <li>Amazon : RCPT TO: &lt;test123$amazon.co.uk@domboxmail.com&gt;</li>
+            </ul>
+        </div>
+        <div class="well well-desc">
+            <ul class="smtp-chat">
+                <li>The sending server states the recipient. In this case test123$<span style="color: #2196F3">amazon.co.uk</span>@domboxmail.com</li>
+                <li>Hold On! That doesn't seem right. </li>
+                <li>"Envelope Domain" is "amazon.com". i.e. MAIL FROM: &lt;jeff@<span style="color: deeppink">amazon.com</span>&gt;</li>
+                <li>However the "Dombox Domain" is "amazon.co.uk". i.e. RCPT TO: &lt;test123$<span style="color: #2196F3">amazon.co.uk</span>@domboxmail.com&gt;</li>
+                <li><span style="color: #2196F3">amazon.co.uk</span> is the House owner. But <span style="color: deeppink">amazon.com</span> is trying to enter the house.</li>
+                <li>Maybe amazon.com is an "Alias Domain" for amazon.co.uk. So we are gonna ask our second question to the "Dombox Domain".</li>
+                <li>Note: We are gonna ask this question two times. To distinguish, let's call this question as 2(a). </li>
+            </ul>
+        </div>
+
+        <div class="sub-content">
+            <div class="well nomb" style="text-align: center">
+                <ul class="smtp-chat">
+                    <li style="border-bottom: 1px solid #cccccc; margin-bottom: 10px; padding-bottom: 10px">Question 2(a): Hello "Dombox Domain i.e. <span style="color: #2196F3">amazon.co.uk</span>", Could you give us your "Alias Domains" for your outgoing mails?</li>
+                    <li>Answer : Sure. Here is our "Alias Domains" => "amazon.com:r+b example.com:s+m example.net"</li>
+                </ul>
+            </div>
+            <div class="well well-desc">
+                <ul class="smtp-chat">
+                    <li>Let's format the response.</li>
+                    <li></li>
+                    <li style="padding-left: 100px">amazon.com:r+b</li>
+                    <li style="padding-left: 100px">example.com:s+m</li>
+                    <li style="padding-left: 100px">example.net</li>
+                    <li></li>
+                    <li>So amazon.co.uk says those three domains are their "Alias Domains". Meaning, those "Alias Domains" can send mails to the "amazon.co.uk" Dombox. </li>
+                    <li>Note: "amazon.co.uk" can set rules for each "Alias Domain". That's what you see after the "colon" character</li>
+                </ul>
+            </div>
+
+            <div class="well nomb" style="text-align: center">
+                <ul class="smtp-chat">
+                    <li>Rules</li>
+                </ul>
+            </div>
+            <div class="well well-desc">
+                <ul class="smtp-chat">
+                    <li>{Domain}:{Relaxed or Strict}+{Envelope Mode or Message Mode or Both}</li>
+                </ul>
+                <table class="table table-bordered" style="margin:20px; margin-right: 0">
+                    <tbody>
+                    <tr>
+                        <td>Relaxed (r)</td>
+                        <td>Exact domain and its subdomains are allowed (Default)</td>
+                    </tr>
+                    <tr>
+                        <td>Strict (s)</td>
+                        <td>Exact domain only allowed.</td>
+                    </tr>
+                    <tr>
+                        <td>Envelope Mode (e)</td>
+                        <td>Domain is allowed only in the “Envelope From” (Default)</td>
+                    </tr>
+                    <tr>
+                        <td>Message Mode (m)</td>
+                        <td>Domain is allowed only in the “Message From”</td>
+                    </tr>
+                    <tr>
+                        <td>Both Mode (b)</td>
+                        <td>Domain is allowed in “Envelope From” as well as “Message From”</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <ul class="smtp-chat">
+                    <li>So, “example.net” is equivalent to  “example.net:r+e”</li>
+                </ul>
+            </div>
+
+            <div class="well nomb" style="text-align: center">
+                <ul class="smtp-chat">
+                    <li>Result</li>
+                </ul>
+            </div>
+            <div class="well well-desc">
+                <ul class="smtp-chat">
+                    <li style="border-bottom: 1px solid #cccccc; margin-bottom: 10px; padding-bottom: 10px">If "Dombox Domain" and "Envelope Domain" are same, then we don't have to ask this question at all. This is called "Direct Pass"</li>
+                    <li>In our case, this is "Indirect Pass".  </li>
+                    <li>Since "amazon.co.uk" whitelisted "amazon.com" via DNS, we allow this mail. </li>
+                    <li style="border-bottom: 1px solid #cccccc; margin-bottom: 10px; padding-bottom: 10px">Note: amazon.com has "Both Mode (b)". That means it's allowed in both "Envelope From" as well as "Message From" </li>
+                    <li>If the result is "Fail", then the mail will be rejected for that particular recipient</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="well nomb" style="text-align: center">
+            <ul class="smtp-chat">
+                <li class="smtp-chat-b">Dombox : 250 OK</li>
+            </ul>
+        </div>
+        <div class="well well-desc">
+            <ul class="smtp-chat">
+                <li>Our server acknowledges the "RCPT TO" command issued by the sender</li>
+            </ul>
+        </div>
+
+        <div class="well nomb" style="text-align: center">
+            <ul class="smtp-chat">
+                <li>Amazon : DATA</li>
+            </ul>
+        </div>
+        <div class="well well-desc">
+            <ul class="smtp-chat">
+                <li>Amazon indicates that they are about to begin the original message. i.e. Message Part</li>
+            </ul>
+        </div>
+
+        <div class="well nomb" style="text-align: center">
+            <ul class="smtp-chat">
+                <li class="smtp-chat-b">Dombox : 354 End data with &lt;CRLF&gt;.&lt;CRLF&gt;</li>
+            </ul>
+        </div>
+        <div class="well well-desc">
+            <ul class="smtp-chat">
+                <li>Our server tells amazon to go ahead using the code 354</li>
+            </ul>
+        </div>
+
+        <div class="well nomb" style="text-align: center">
+            <ul class="smtp-chat">
+                <li class="smtp-chat-m">Amazon : From: Jeff Bezos &lt;jeff@amazon.com&gt;</li>
+                <li class="smtp-chat-m">Amazon : To: Test User &lt;test123$amazon.co.uk@domboxmail.com&gt;</li>
+                <li class="smtp-chat-m">Amazon : Date: Fri, 01 January 2015 16:02:43 -0500</li>
+                <li class="smtp-chat-m">Amazon : DKIM-Signature: a=rsa-sha1; q=dns; s=selector123; d=amazon.ca; ……….</li>
+                <li class="smtp-chat-m">Amazon : Subject: Merry Christmas</li>
+                <li class="smtp-chat-m">Amazon : Merry Christmas and a Happy New Year.</li>
+                <li class="smtp-chat-m">Amazon : Regards,</li>
+                <li class="smtp-chat-m">Amazon : Jeff Bezos</li>
+                <li class="smtp-chat-m">Amazon : .</li>
+            </ul>
+        </div>
+        <div class="well well-desc">
+            <ul class="smtp-chat">
+                <li>We got the whole original message now.</li>
+                <li>We are gonna ask three more questions here.</li>
+                <li style="border-bottom: 1px solid #cccccc; margin-bottom: 10px; padding-bottom: 10px">Before that, let's understand the terms</li>
+                <li class="smtp-chat-m">Amazon : From: Jeff Bezos &lt;jeff@<span style="color: red">amazon.com</span>&gt;</li>
+                <li>This part is called "Message From"</li>
+                <li style="border-bottom: 1px solid #cccccc; margin-bottom: 10px; padding-bottom: 10px"><span style="color: red">amazon.com</span> is the "Message Domain" here</li>
+                <li class="smtp-chat-m">Amazon : DKIM-Signature: a=rsa-sha1; q=dns; s=selector123; d=<span style="color: rebeccapurple">amazon.ca</span>; ……….</li>
+                <li>This part is called "Signature"</li>
+                <li><span style="color: rebeccapurple">amazon.ca</span> is the "Signature Domain" here</li>
+
+            </ul>
+        </div>
+
+        <div class="sub-content">
+            <div class="well nomb" style="text-align: center">
+                <ul class="smtp-chat">
+                    <li style="border-bottom: 1px solid #cccccc; margin-bottom: 10px; padding-bottom: 10px">Question 2(b): We already know amazon.com is an "Alias Domain" for "amazon.co.uk" via Question 2(a). But is it allowed in "Message From"? </li>
+                    <li>"amazon.com:r+b example.com:s+m example.net"</li>
+                </ul>
+            </div>
+            <div class="well well-desc">
+                <ul class="smtp-chat">
+                    <li>Since we see "Both Mode (b)" for amazon.com, the answer is "Yes". So we are gonna allow this mail.</li>
+                </ul>
+            </div>
+
+            <div class="well nomb" style="text-align: center">
+                <ul class="smtp-chat">
+                    <li style="border-bottom: 1px solid #cccccc; margin-bottom: 10px; padding-bottom: 10px">Question 3: Hello "Signature Domain (i.e. <span style="color: rebeccapurple">amazon.ca</span>)", could you give us your "Public Key" for verifying "Digital Signature"? </li>
+                    <li>Answer : Sure. Here is our "Public Key" => "......."</li>
+                </ul>
+            </div>
+            <div class="well well-desc">
+                <ul class="smtp-chat">
+                    <li>We get the "Public Key" from "amazon.ca" and verify the signature.</li>
+                    <li>Note: The signature verification would result in "Fail" even if a single white space added in the message during transit. </li>
+                    <li>So "Digital Signature" not only helps us in "Authentication", but also helps us to prevent "Message Modification" during transit</li>
+                </ul>
+            </div>
+
+            <div class="well nomb" style="text-align: center">
+                <ul class="smtp-chat">
+                    <li style="border-bottom: 1px solid #cccccc; margin-bottom: 10px; padding-bottom: 10px">Question 4: Hello "Message Domain (i.e. <span style="color: red">amazon.com</span>)", could you give us your misalignment "Policy"? </li>
+                    <li>Answer : Sure. Here is our misalignment policy => "None"</li>
+                </ul>
+            </div>
+            <div class="well well-desc">
+                <ul class="smtp-chat">
+                    <li>Amazon : MAIL FROM: &lt;jeff@amazon.com&gt;</li>
+                    <li class="smtp-chat-m">Amazon : From: Jeff Bezos &lt;jeff@amazon.com&gt;</li>
+                    <li class="smtp-chat-m" style="border-bottom: 1px solid #cccccc; margin-bottom: 10px; padding-bottom: 10px">Amazon : DKIM-Signature: a=rsa-sha1; q=dns; s=selector123; d=amazon.ca; ……….</li>
+
+                    <li>Envelope Domain: <span style="color: deeppink">amazon.com</span></li>
+                    <li>Message Domain: <span style="color: red">amazon.com</span></li>
+                    <li style="border-bottom: 1px solid #cccccc; margin-bottom: 10px; padding-bottom: 10px">Signature Domain: <span style="color: rebeccapurple">amazon.ca</span></li>
+                    <li>Clearly, there is a mismatch</li>
+                    <li style="border-bottom: 1px solid #cccccc; margin-bottom: 10px; padding-bottom: 10px">"Signature Domain" not aligned with the "Message Domain"</li>
+                    <li>Many spammers use the spoofing method to send Phishing mails.</li>
+                    <li>Companies like PayPal had been a major victim of Phishing mails in the past.</li>
+                    <li>Keep in mind, "Message Part" is the one that get displayed to the user. That's why we need to make sure "Message Domain" is not a spoofed one. </li>
+                    <li>So our Subject of Interest is the "Message Domain"</li>
+                    <li>If the "Message Domain" doesn't match with "Envelope Domain" or "Signature Domain", then we need to apply the policy given by the "Message Domain"</li>
+                    <li>The Policy can be one of the following three things. None, Quarantine, Reject</li>
+                    <li>None - Do whatever you want, Quarantine - Put in the spam folder, Reject - Reject the mail immediately</li>
+                    <li>If "PayPal" says "Reject", that means they are telling us to not accept mail from anyone else</li>
+                </ul>
+            </div>
+
+            <div class="well nomb" style="text-align: center">
+                <ul class="smtp-chat">
+                    <li>Result</li>
+                </ul>
+            </div>
+            <div class="well well-desc">
+                <ul class="smtp-chat">
+                    <li>This mail will be accepted because the "Message Domain i.e. amazon.com" has "No Objection" due to the "None" policy</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="well nomb" style="text-align: center">
+            <ul class="smtp-chat">
+                <li class="smtp-chat-b">Dombox : 250 OK, message accepted for delivery: queued as 12345</li>
+            </ul>
+        </div>
+        <div class="well well-desc">
+            <ul class="smtp-chat">
+                <li>Our server informs the sender that the mail is accepted.</li>
+            </ul>
+        </div>
+
+        <div class="well nomb" style="text-align: center">
+            <ul class="smtp-chat">
+                <li>Amazon : QUIT</li>
+            </ul>
+        </div>
+        <div class="well well-desc">
+            <ul class="smtp-chat">
+                <li>Amazon says "Ok. I'm done"</li>
+            </ul>
+        </div>
+
+        <div class="well nomb" style="text-align: center">
+            <ul class="smtp-chat">
+                <li class="smtp-chat-b">Dombox : 221 Bye</li>
+            </ul>
+        </div>
+        <div class="well well-desc">
+            <ul class="smtp-chat">
+                <li>Our server finishes the conversation with the 221 code</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2>Terminology</h2>
+        <p>Let's have little bit of technical terms here</p>
+        <p>The one where we checked for "Authorized IP Address" is called "Authorization Layer (SPF)"</p>
+        <p>The one where we checked for "Alias Domains" is called "Alias Layer (SAD)"</p>
+        <p>The one where we checked for "Signature" is called "Authentication Layer (DKIM)"</p>
+        <p>The one where we checked for "mislignment policy" is called "Alignment Layer (DMARC)"</p>
+        <p>Finally we also check whether the mail is encrypted or not. This is called "Encryption Layer (TLS)"</p>
+        <p>Note: Our system relies on already existing standards like TLS, SPF, DKIM and DMARC. So we are not trying to reinvent the wheel for those checks. </p>
+        <p>However, for "Alias Layer", we had to introduce our own standard. We call it "Sender Alias Domains (SAD)" </p>
+    </div>
+
+    <div class="section">
+        <h2>Rules</h2>
+        <p>The following layers must be passed for the mail to be accepted.</p>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <td></td>
+                <td>Primary (P)</td>
+                <td>Mailbox (M)</td>
+                <td>Dombox (D)</td>
+                <td>Hybrid (H)</td>
+                <td>Combox (C)</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Encryption Layer (TLS)</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>Must be Passed</td>
+                <td>Must be Passed</td>
+            </tr>
+            <tr>
+                <td>Authorization Layer (SPF)</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>Must be Passed</td>
+                <td>Must be Passed</td>
+            </tr>
+            <tr>
+                <td>Alias Layer (SAD)</td>
+                <td>Not Applicable</td>
+                <td>Not Applicable</td>
+                <td>Must be Passed</td>
+                <td>Must be Passed</td>
+                <td>Must be Passed</td>
+            </tr>
+            <tr>
+                <td>Authentication Layer (DKIM)</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>Must be Passed</td>
+                <td>Must be Passed</td>
+            </tr>
+            <tr>
+                <td>Alignment Layer (DMARC)</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>Must be Passed</td>
+                <td>Must be Passed</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="section last-section">
+        <h2 id="solution"></h2>
+        <ul class="title-block">
+            <li><a href="system.html" class="previous">&laquo; Part 1: The System</a></li>
+            <li><h1>Part 2: The Technology</h1></li>
+            <li><a href="contracts.html" class="next">Part 3: The Contracts &raquo;</a></li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b757342c7f8b574"></script>
+</section>
+<div style="text-align: center; margin-bottom: 20px; font-size: 12px">&copy; 2018 Dombox, Inc. All rights reserved.</div>
+​<script type="text/javascript">
+    var addthis_config = addthis_config||{};
+    addthis_config.data_track_addressbar = false;
+    addthis_config.data_track_clickback = false;
+</script>
+</body>
+
+</html>
