@@ -1,1 +1,179 @@
-Work in progress...
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Dombox - The Zero Spam Mail Service</title>
+    <meta name="author" content="Viruthagiri Thirumavalavan">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Google Font -->
+	 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,800%7CRanga:700" rel="stylesheet">  
+    
+    <!-- All CSS -->
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" href="css/magnific-popup.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121619257-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-121619257-2');
+    </script>
+    <!-- End Google Analytics -->
+	
+
+</head>
+<body class="mrs-v7">
+	<!-- Page Loader Start -->
+	<div class="marshall-loading-screen">
+	    <div class="marshall-loading-icon">
+	        <div class="marshall-loading-inner">
+	        	<div class="marshall-load" data-name="D"></div>
+	        </div>
+	    </div>
+	</div><!-- End .loading-screen -->
+
+	<div class="marshall-container bg-container" style="background-color: #56c2df">
+		<div class="marshall-col-6 marshall-col-content">
+			
+			<div class="marshall-content jquery-center">
+				<h1 class="fadeIn medium fat_title">We are Dombox.</h1>
+				<h4 class="fadeIn medium fat_title" style="font-size: 1.6em;">The Zero Spam Mail Service.</h4>
+				<div class="marshall-button-group">
+					<a class="marshall-btn" href="https://www.medium.com" target="_blank" title="" style="margin-right: 20px; margin-bottom: 20px">
+						<i class="fa fa-bars" aria-hidden="true"></i>
+						System Overview
+					</a>
+					<a class="marshall-btn" href="https://www.dombox.org" target="_blank" title="" style="margin-bottom: 20px">
+						<i class="fa fa-file-text-o" aria-hidden="true"></i>
+						White Paper
+					</a>
+				</div>
+					<div class="">
+						<p>For business enquiries send an email to giri@dombox.org</p>
+					</div>
+			</div>
+
+			<div class="marshall-social-column">
+				<p class="fadeIn fast">Copyright &copy; 2019 Dombox, Inc.</p>
+			</div>
+		</div>
+		<div class="marshall-col-6 marshall-col-screen">
+			<div id="marshall-animate-area" data-hide="mrs-scaleDown" class="marshall-static-content">
+				<div class="marshall-full-contact-area">
+					<h5 style="margin: 0">Get Early Access</h5>
+					<div class="stay_connent_with_social">
+						<p style="font-size: 0.8em; margin: 0 40px">If you are a consumer who would like to try our @domboxmail.com address, just leave your current email below. We will invite you once our product is ready</p>
+					</div>
+					<div class="default_mrs_newsletter">
+						<form id="marshall-form" class="marshall-newsletter-content" action="https://xbp68u9rl4.execute-api.us-east-1.amazonaws.com/invite" method="POST">
+							<input id="marshall-email" type="email" placeholder="Your Current Email Address">
+							<div style="width: 90%; margin:auto auto 20px">
+								<input class="form-check-input" name="teleport" type="checkbox" id="teleport" value="1" style="width: auto; float: left">
+		                        <label class="form-check-label" for="teleport">
+		                            I'm a website owner. Invite me for "Teleport" early access too
+		                        </label>
+							</div>
+							<div>
+								<div class="g-recaptcha" data-sitekey="6Lcg6mkUAAAAAFOJvXhynWHSNWk9tYrUSd21XAkY"></div>
+							</div>
+							<button class="marshall_submit" type="submit">Submit</button>
+							<div id="form-messages" class=""></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<!-- All marshall js files -->
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+
+	<script type="text/javascript">
+        ( function ($, window, undefined) {
+            $( document ).ready(function(e) {
+                // Contact Form AJAX Submission
+                $(function() {
+                    // Get the form.
+                    let form = $('#marshall-form');
+                    // Get the messages div.
+                    let formMessages = $('#form-messages');
+                    // Set up an event listener for the contact form.
+                    $(form).submit(function(e) {
+                    	// Stop the browser from submitting the form.
+                        e.preventDefault();
+                        $(form).removeClass('mform-error').addClass('mform-submitting');
+					    setTimeout(function(){
+        					$(form).addClass('mform-animate');
+       					}, 900);
+                        // Validate the form. All fields are mandatory.
+                        if ($.trim($('#marshall-email').val()) === '') {
+                            $(form).removeClass('mform-submitting').removeClass('mform-animate').addClass('mform-error');
+                            $(formMessages).text('Email cannot be empty');
+                            return;
+                        }
+                        if ($.trim($('#g-recaptcha-response').val()) === '') {
+                            $(form).removeClass('mform-submitting').removeClass('mform-animate').addClass('mform-error');
+                            $(formMessages).text('You seem to be a bot!');
+                            return;
+                        }
+                        // Serialize the form data.
+                        let formData = $(form).serialize();
+                        // Submit the form using AJAX.
+                        $.ajax({
+                            type: 'POST',
+                            url: $(form).attr('action'),
+                            data: JSON.stringify(formData),
+                            dataType: 'json',
+                            contentType: 'application/json',
+                            success: function(data, textStatus, jqXHR) {
+                                // console.log(data);
+                                $(form).removeClass('mform-submitting').removeClass('mform-animate').removeClass('mform-error').addClass('mform-success');
+                                // Set the message text.
+                                $(formMessages).text(data.message);
+                                // Clear the form.
+                                form.trigger("reset");
+                            },
+                            error: function(jqXHR, textStatus, errorThrown) {
+                                // console.log(errorThrown);
+                                // Make sure that the formMessages div has the 'error' class.
+                                $(form).removeClass('mform-submitting').removeClass('mform-animate').removeClass('mform-success').addClass('mform-error');
+                                // Set the message text.
+                                if (jqXHR.responseText !== '') {
+                                    let responseJson = JSON.parse(jqXHR.responseText);
+                                    if (responseJson.message) {
+                                        $(formMessages).text(responseJson.message);
+                                    } else {
+                                        $(formMessages).text(jqXHR.responseText);
+                                    }
+                                } else {
+                                    $(formMessages).text('Oops! An error occurred. Unable to add to the invite list.');
+                                }
+                            }
+                        });
+                        // Reset Recaptcha
+                        grecaptcha.reset();
+                    });
+                })
+            });
+        }(jQuery, window));
+    </script>
+    <script type="text/javascript">
+	    var addthis_config = addthis_config||{};
+	    addthis_config.data_track_addressbar = false;
+	    addthis_config.data_track_clickback = false;
+	</script>
+	
+</body>
+</html>
