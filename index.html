@@ -119,13 +119,17 @@
        					}, 900);
                         // Validate the form. All fields are mandatory.
                         if ($.trim($('#marshall-email').val()) === '') {
-                            $(form).removeClass('mform-submitting').removeClass('mform-animate').addClass('mform-error');
-                            $(formMessages).text('Email cannot be empty');
+                        	setTimeout(function(){
+	        					$(form).removeClass('mform-submitting').removeClass('mform-animate').addClass('mform-error');
+                            	$(formMessages).text('Email cannot be empty');
+	       					}, 2000);
                             return;
                         }
                         if ($.trim($('#g-recaptcha-response').val()) === '') {
-                            $(form).removeClass('mform-submitting').removeClass('mform-animate').addClass('mform-error');
-                            $(formMessages).text('You seem to be a bot!');
+                        	setTimeout(function(){
+	        					$(form).removeClass('mform-submitting').removeClass('mform-animate').addClass('mform-error');
+                            	$(formMessages).text('You seem to be a bot!');
+	       					}, 2000);
                             return;
                         }
                         // Serialize the form data.
